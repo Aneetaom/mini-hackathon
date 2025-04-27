@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .setting-card {
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+        .setting-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .nav-pills .nav-link.active {
+            background-color: #0d6efd;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <div class="col-md-3 mb-4">
+                <div class="card setting-card shadow-sm">
+                    <div class="card-header bg-white border-bottom">
+                        <h5 class="mb-0 fw-bold"><i class="bi bi-gear me-2"></i>Settings</h5>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <a href="#profile" class="list-group-item list-group-item-action active" data-bs-toggle="pill">
+                            <i class="bi bi-person me-2"></i>Profile
+                        </a>
+                        <a href="#security" class="list-group-item list-group-item-action" data-bs-toggle="pill">
+                            <i class="bi bi-shield-lock me-2"></i>Security
+                        </a>
+                        <a href="#notifications" class="list-group-item list-group-item-action" data-bs-toggle="pill">
+                            <i class="bi bi-bell me-2"></i>Notifications
+                        </a>
+                        <a href="#privacy" class="list-group-item list-group-item-action" data-bs-toggle="pill">
+                            <i class="bi bi-lock me-2"></i>Privacy
+                        </a>
+                        <a href="#account" class="list-group-item list-group-item-action" data-bs-toggle="pill">
+                            <i class="bi bi-credit-card me-2"></i>Account
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <!-- Profile Settings Tab -->
+                    <div class="tab-pane fade show active" id="profile">
+                        <div class="card setting-card shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <h5 class="mb-0 fw-bold"><i class="bi bi-person me-2"></i>Profile Settings</h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3 text-center">
+                                        <img src="https://tse4.mm.bing.net/th?id=OIP.nuWfV1EsDVj5zUPxY7ta6wHaE8&pid=Api&P=0&h=220" class="rounded-circle mb-3" width="120" alt="Profile">
+                                        <input type="file" class="form-control d-none" id="profilePic">
+                                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('profilePic').click()">
+                                            <i class="bi bi-upload me-1"></i>Change Photo
+                                        </button>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" value="Anum Rajj">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" value="anun@example.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Bio</label>
+                                        <textarea class="form-control" rows="3">UI/UX Designer & Developer</textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings Tab -->
+                    <div class="tab-pane fade" id="security">
+                        <div class="card setting-card shadow-sm mb-4">
+                            <div class="card-header bg-white border-bottom">
+                                <h5 class="mb-0 fw-bold"><i class="bi bi-shield-lock me-2"></i>Password</h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label">Current Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">New Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update Password</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card setting-card shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <h5 class="mb-0 fw-bold"><i class="bi bi-phone me-2"></i>Two-Factor Authentication</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <h6 class="mb-1">SMS Authentication</h6>
+                                        <p class="text-muted small mb-0">Use your mobile phone to receive security codes</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="smsAuth">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1">Authenticator App</h6>
+                                        <p class="text-muted small mb-0">Use an app like Google Authenticator</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="appAuth" checked>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Settings Tab -->
+                    <div class="tab-pane fade" id="notifications">
+                        <div class="card setting-card shadow-sm">
+                            <div class="card-header bg-white border-bottom">
+                                <h5 class="mb-0 fw-bold"><i class="bi bi-bell me-2"></i>Notification Preferences</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h6 class="mb-3">Email Notifications</h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="emailNews" checked>
+                                        <label class="form-check-label" for="emailNews">News and updates</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="emailPromo" checked>
+                                        <label class="form-check-label" for="emailPromo">Promotions</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="emailSecurity" checked>
+                                        <label class="form-check-label" for="emailSecurity">Security alerts</label>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <h6 class="mb-3">Push Notifications</h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="pushMessages" checked>
+                                        <label class="form-check-label" for="pushMessages">New messages</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="pushReminders" checked>
+                                        <label class="form-check-label" for="pushReminders">Reminders</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Preferences</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more tabs as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

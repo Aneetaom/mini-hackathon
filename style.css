@@ -1,0 +1,34 @@
+
+
+
+
+
+body {
+     /* background: url('./image/th.jpg') no-repeat center center fixed;  */
+    background-size: cover;
+
+}
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #555;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: #ff9800;
+}
+.pro {
+    display: flex; /* Flexbox active करें */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+.pro img {
+border-radius: 50%;
+padding: 20px;
+
+}
