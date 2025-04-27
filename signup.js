@@ -61,9 +61,9 @@ const signIn = async (e) => {
 
     console.log("User Signed In:", user);
 
-    // ✅ Redirect based on email
+    
     if (email === "anumrajj@gmail.com") {
-      window.location.href = "admine.html";
+      window.location.href = "./admin.html";
     } else {
       window.location.href = "profile.html";
     }

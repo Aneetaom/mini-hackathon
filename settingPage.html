@@ -62,7 +62,7 @@
                             <div class="card-body">
                                 <form>
                                     <div class="mb-3 text-center">
-                                        <img src="https://tse4.mm.bing.net/th?id=OIP.nuWfV1EsDVj5zUPxY7ta6wHaE8&pid=Api&P=0&h=220" class="rounded-circle mb-3" width="120" alt="Profile">
+                                        <img src="https://tse4.mm.bing.net/th?id=OIP.nuWfV1EsDVj5zUPxY7ta6wHaE8&pid=Api&P=0&h=220" class="rounded-circle mb-3 " width="120" style="width: 200px;" alt="Profile">
                                         <input type="file" class="form-control d-none" id="profilePic">
                                         <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('profilePic').click()">
                                             <i class="bi bi-upload me-1"></i>Change Photo
@@ -178,9 +178,23 @@
 
                     <!-- Add more tabs as needed -->
                 </div>
+
+
             </div>
         </div>
     </div>
+
+
+    <script>
+        document.getElementById('profilePic').addEventListener('change', function() {
+  const file = this.files[0];
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    document.querySelector('.rounded-circle').src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+});
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

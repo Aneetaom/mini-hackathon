@@ -1,35 +1,35 @@
 
 
 
-import {
-    db,
-    //  doc, 
-     collection, getDocs
-} from "./firebase.js";
+// import {
+//     db,
+//     //  doc, 
+//      collection, getDocs
+// } from "./firebase.js";
 
 
 
-const getAllUsers = async ()=>{
-const usersTable = document.getElementById("all-users")
+// const getAllUsers = async ()=>{
+// const usersTable = document.getElementById("all-users")
 
-    const querySnapshot = await getDocs(collection(db, "users"));
-querySnapshot.forEach((currentUser) => {
-  let user = currentUser.data();
-    usersTable.innerHTML = `
-     <tr>
-          <td scoperow>1</td>
-          <td>${user?.name}</td>
-          <td>${user?.email}</td>
-          <td>${user?.age}</td>
-          <td>${user?.status}</td>
-        </tr>`
-  // doc.data() is never undefined for query doc snapshots
-  console.log(user, " => ", doc.data());
-});
+//     const querySnapshot = await getDocs(collection(db, "users"));
+// querySnapshot.forEach((currentUser) => {
+//   let user = currentUser.data();
+//     usersTable.innerHTML = `
+//      <tr>
+//           <td scoperow>1</td>
+//           <td>${user?.name}</td>
+//           <td>${user?.email}</td>
+//           <td>${user?.age}</td>
+//           <td>${user?.status}</td>
+//         </tr>`
+//   // doc.data() is never undefined for query doc snapshots
+//   console.log(user, " => ", doc.data());
+// });
 
-}
+// }
 
-getAllUsers;
+// getAllUsers;
 
 // const getAIIUsers = async () => {
 // const ref = query(collection(db, "users"), orderBy("age", "desc"));

@@ -1,5 +1,6 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import { serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js';
 
 import { getAuth,
    onAuthStateChanged,
@@ -15,12 +16,10 @@ import { getAuth,
 
 // firestore
 
- import { getFirestore,
-    doc, setDoc,  getDoc, collection, getDocs, deleteDoc, updateDoc,  onSnapshot, query, orderBy, where
-   
-
-  } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-
+import { 
+  getFirestore,
+  doc, setDoc, getDoc, addDoc, collection, getDocs, deleteDoc, updateDoc, onSnapshot, query, orderBy, where
+} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
 
 
@@ -59,9 +58,9 @@ const app = initializeApp(firebaseConfig);
     //  doc, setDoc,  db,
     //  getDoc
 
-    db, doc, setDoc, getDoc, collection, getDocs, deleteDoc,  onSnapshot, query,  orderBy,   where,
-    updateDoc,
-
+   
+      db, doc, setDoc, getDoc, addDoc, collection, getDocs, deleteDoc, updateDoc, onSnapshot, query, orderBy, where, serverTimestamp
+   
   
 
 
