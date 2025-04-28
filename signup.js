@@ -65,7 +65,7 @@ const signIn = async (e) => {
     if (email === "anumrajj@gmail.com") {
       window.location.href = "./admin.html";
     } else {
-      window.location.href = "profile.html";
+      window.location.href = "index.html";
     }
 
   } catch (error) {
